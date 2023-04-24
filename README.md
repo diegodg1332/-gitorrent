@@ -12,6 +12,12 @@ prueba de sergio
 =======
 Linea escrita y editada por JaimeGR
 Hola soy desi y me siento imbecil usando esto
+<<<<<<< HEAD
 Linea de sergio
 
 xdddddgit
+=======
+Linea de sergio
+
+
+hola soy jony
