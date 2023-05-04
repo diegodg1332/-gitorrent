@@ -12,6 +12,16 @@ type = string
 default = 
 description = 
 }
+#localizacion del grupo de recursos
+variable "resource_group_location" {
+  type    = string
+  default = "eu-north"
+}
+#nombre del grupo de recursos 
+variable "resource_group_name" {
+  type    = string
+  default = 
+} 
 
 # variable de la localizacion de la maquina
 variable "location" {
@@ -19,7 +29,7 @@ variable "location" {
     default = eu-north
 }
 
-# variable del pasword de la máquina
+# variable del password de la máquina
 variable "password" {
     type = string
    
@@ -41,3 +51,24 @@ variable "os_disk_storage_account_type" {
   default = 
 }
 ####--------------------------------------------------###
+
+# variables para el "source_image_references"
+variable "image_publisher" {
+  type    = string
+  default = "MicrosoftWindowsServer"
+}
+
+variable "image_offer" {
+  type    = string
+  default = "WindowsServer"
+}
+
+variable "image_sku" {
+  type    = string
+  default = "2022-datacenter-azure-edition"
+}
+
+variable "image_version" {
+  type    = string
+  default = "latest"
+}

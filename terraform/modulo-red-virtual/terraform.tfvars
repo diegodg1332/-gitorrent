@@ -1,1 +1,0 @@
-vn_name = "vnet"
