@@ -164,7 +164,7 @@ resource "random_password" "contraseña" {
 
 # Generamos una cadena de texto aleatoria de un solo caracter que se utiliza como prefijo
 
-resource "random_pet" "prefijo" {
+resource "random_pet" "prefix" {
   prefix = var.prefix
   length = 1
 
