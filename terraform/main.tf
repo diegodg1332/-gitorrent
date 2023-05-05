@@ -134,7 +134,7 @@ resource "azurerm_virtual_machine_extension" "web_server_install" {
 
 # Generate random text for a unique storage account name
 
-resource "random_id" "cuenta_almacenamiento" {
+resource "random_id" "id_unico" {
   keepers = {
     
 # Generate a new ID only when a new resource group is defined 
@@ -152,7 +152,7 @@ resource "random_id" "cuenta_almacenamiento" {
 # Generamos una contraseña aleatoria de 20 caracteres que contiene 
 # al menos una letra minuscula, una masyuscula, un numero y un caracter especial
 
-resource "random_password" "contraseña" {
+resource "random_password" "password" {
   length = 20
   min_lower = 1
   min_upper = 1 
