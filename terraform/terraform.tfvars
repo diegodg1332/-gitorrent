@@ -1,12 +1,6 @@
-azure_new_resource_group = {
-  "name"     = "jm-inn-tf-learn-vms-intro-rg"
-  "location" = "westeurope"
-}
-
-azure_new_resource_group_tags = {
-  "Category"    = "Terraform"
-  "Subcategory" = "Learning"
-  "Subject"     = "Virtual Machines"
+variable "resource_group_location" {
+  default     = "eastus"
+  description = "Localizacción del grupo de recurso."
 }
 
 variable "prefix" {
