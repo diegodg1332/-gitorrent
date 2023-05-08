@@ -9,5 +9,9 @@ azure_new_resource_group_tags = {
   "Subject"     = "Virtual Machines"
 }
 
-prefix = "vm-intro"
+variable "prefix" {
+  type        = string
+  default = "grupo3"
+  description = "Prefijo para identificar al grupo"
+}
 

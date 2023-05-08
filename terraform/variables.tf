@@ -12,11 +12,5 @@ variable "azure_new_resource_group_tags" {
 
 variable "prefix" {
   type        = string
-  description = "Prefix to include in resource names for making them more consistent"
-}
-
-variable "vm_size" {
-  type        = string
-  default     = "Standard_B2s"
-  description = "Size for Virtual Machine"
+  description = "Prefijo para identificar al grupo"
 }
