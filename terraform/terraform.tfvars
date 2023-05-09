@@ -38,4 +38,4 @@ os_disk_storage_account_type = "Premium_LRS"
 #valores del IIS
 
 name = "iis"
-virtual_machine_id = 
+virtual_machine_id = ""
