@@ -4,6 +4,8 @@ location = "easteu"
 
 resource_group_name = "my-resource-group"
 
+resource_group_location = "eastus"
+
 address_space = "10.0.0.0/16"
 
 subnet_name = "mi subred"
@@ -13,7 +15,7 @@ subnet_address_prefix = "10.0.3.0/24"
 
 #Valores de variables de v-machine
 
-prefix = "myprefix"
+prefix = "grupo3"
 
 admin_username = "usuario_de_azure"
 
