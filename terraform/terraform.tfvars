@@ -34,3 +34,19 @@ os_disk_name = "myOsDisk"
 os_disk_caching = "ReadWrite"
 
 os_disk_storage_account_type = "Premium_LRS"
+
+#variables de security ruls
+#variable "nsg_name"
+nsg_name = "my-nsg"
+
+#variable "nsg_location"
+nsg_location = "eastus"
+
+#variable "nsg_resource_group_name"
+nsg_resource_group_name = "my-resource-group"
+
+#variable "rdp_port"
+rdp_port = 3389
+
+#variable "web_port" 
+web_port = 80
