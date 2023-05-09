@@ -28,7 +28,7 @@ resource "azurerm_windows_virtual_machine" "main" {
     caching              = "ReadWrite"
     storage_account_type = "Premium_LRS"
   }
-
+}
 #Aquí se genera la interfaz de red
 
 resource "azurerm_network_interface" "grupo3_nic" {
