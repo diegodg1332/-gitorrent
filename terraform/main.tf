@@ -43,3 +43,20 @@ resource "azurerm_network_interface" "grupo3_nic" {
     public_ip_address_id          = azurerm_public_ip.my_terraform_public_ip.id
   }
 }
+}
+
+#recurso del IIS
+resource "azurerm_virtual_machine_extension" "web_server_install" {
+  name                       = "${var.name}-wsi"
+  virtual_machine_id         = azurerm_windows_virtual_machine.main.id
+  publisher                  = "Microsoft.Compute"
+  type                       = "CustomScriptExtension"
+  type_handler_version       = "1.8"
+  auto_upgrade_minor_version = true
+
+  settings = <<SETTINGS
+    {
+      "commandToExecute": "powershell -ExecutionPolicy Unrestricted Install-WindowsFeature -Name Web-Server -IncludeAllSubFeature -IncludeManagementTools"
+    }
+  SETTINGS
+}

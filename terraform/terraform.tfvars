@@ -34,3 +34,8 @@ os_disk_name = "myOsDisk"
 os_disk_caching = "ReadWrite"
 
 os_disk_storage_account_type = "Premium_LRS"
+
+#valores del IIS
+
+name = "iis"
+virtual_machine_id = 
