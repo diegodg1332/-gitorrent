@@ -50,3 +50,7 @@ rdp_port = 3389
 
 #variable "web_port" 
 web_port = 80
+#valores del IIS
+
+name = "iis"
+virtual_machine_id = ""

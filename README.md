@@ -14,6 +14,7 @@ Linea escrita y editada por JaimeGR
 Hola soy desi y me siento imbecil usando esto
 <<<<<<< HEAD
 Linea de sergio
+Hola soy Maria y esta es mi linea
 
 xdddddgit
 =======
