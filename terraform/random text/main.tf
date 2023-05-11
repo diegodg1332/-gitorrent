@@ -4,3 +4,4 @@ resource "azurerm_storage_account" "my_storage_account" {
   resource_group_name      = var.nombre_grupo
   account_tier             = "Standard"
   account_replication_type = "LRS"
+}
