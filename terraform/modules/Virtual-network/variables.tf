@@ -24,7 +24,7 @@ variable "nombre_vnet" {
 
 variable "ubicacion" {
 type = string
-default ""
+default = ""
 }
 
 variable "nombre_IP" {
