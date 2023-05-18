@@ -163,6 +163,36 @@ resource "azurerm_storage_account" "my_storage_account" {
   account_replication_type = "LRS"
 }
 
+
+# Create virtual machine
+resource "azurerm_windows_virtual_machine" "main" {
+  name                  = "${var.prefix}-vm"
+  admin_username        = "azureuser"
+  admin_password        = random_password.password.result
+  location              = azurerm_resource_group.rg.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  network_interface_ids = [azurerm_network_interface.my_terraform_nic.id]
+  size                  = "Standard_DS1_v2"
+
+  os_disk {
+    name                 = "myOsDisk"
+    caching              = "ReadWrite"
+    storage_account_type = "Premium_LRS"
+  }
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2022-datacenter-azure-edition"
+    version   = "latest"
+  }
+
+
+  boot_diagnostics {
+    storage_account_uri = azurerm_storage_account.my_storage_account.primary_blob_endpoint
+  }
+}
+
 # Install IIS web server to the virtual machine
 resource "azurerm_virtual_machine_extension" "web_server_install" {
   name                       = "${random_pet.prefix.id}-wsi"
@@ -180,25 +210,42 @@ resource "azurerm_virtual_machine_extension" "web_server_install" {
 }
 
 # Generate random text for a unique storage account name
-resource "random_id" "random_id" {
+
+resource "random_id" "id_unico" {
   keepers = {
-    # Generate a new ID only when a new resource group is defined
-    resource_group = azurerm_resource_group.rg.name
+    
+# Generate a new ID only when a new resource group is defined 
+
+    resource_group = azurerm_group.rg.name
+
+# Creamos una cadena aleatoria con una longitud de 8 bytes, que se utiliza para generar un nombre unico.
+
   }
 
-  byte_length = 8
+    byte_length = 8
+
 }
 
+# Generamos una contraseña aleatoria de 20 caracteres que contiene 
+# al menos una letra minuscula, una masyuscula, un numero y un caracter especial
+
 resource "random_password" "password" {
-  length      = 20
-  min_lower   = 1
-  min_upper   = 1
+  length = 20
+  min_lower = 1
+  min_upper = 1 
   min_numeric = 1
   min_special = 1
-  special     = true
+  special = true
+
 }
+
+# Generamos una cadena de texto aleatoria de un solo caracter que se utiliza como prefijo
 
 resource "random_pet" "prefix" {
   prefix = var.prefix
   length = 1
+
 }
+
+// Estos recursos de tipo "random" se utilizan para evitar conflictos de nombres y para mejorar
+// la seguridad de los recursos definidos en el archivo
