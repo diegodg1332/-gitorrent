@@ -1,17 +1,17 @@
 variable "virtual_network_name" {
   type = string
-  description = "RED-de-Sergio"
+  default = "RED-de-Sergio"
 }
 
 variable "address_space" {
   type = list(string)
-  description = "IP"
+  default = ["10.0.0.0/16"]
 }
 
 
 variable "nombre_vnet" {
   type = string
-  description = "Nombre de mi VNet"
+  default = "Nombre de mi VNet"
 }
 
  
@@ -19,17 +19,17 @@ variable "nombre_vnet" {
 
  variable "mired_S" {
   type = string
-  description = "IPs"
+  default = "IPs"
 }
 
 variable "ubicacion" {
 type = string
-
+default = ""
 }
 
 variable "nombre_IP" {
 
   type = string
-  description = "nombre de public IP"
+  default = "nombre de public IP"
   
 }
